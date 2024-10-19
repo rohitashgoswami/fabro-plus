@@ -1,11 +1,10 @@
-import React from 'react';
+import React from "react";
 
-const cartItems = [
-  { id: 1, name: "Product 1", price: "$10", quantity: 1 },
-  { id: 2, name: "Product 2", price: "$20", quantity: 2 }
-];
-
-const Cart = () => {
+export const CartContainer = () => {
+  const cartItems = [
+    { id: 1, name: "Product 1", price: "$10", quantity: 1 },
+    { id: 2, name: "Product 2", price: "$20", quantity: 2 },
+  ]; // Make API call to see current cart items 
   return (
     <section className="container mx-auto py-12">
       <h1 className="text-4xl font-bold text-center mb-10">Your Cart</h1>
@@ -14,7 +13,10 @@ const Cart = () => {
           <p className="text-center">Your cart is empty.</p>
         ) : (
           cartItems.map((item) => (
-            <div key={item.id} className="border p-4 flex justify-between items-center">
+            <div
+              key={item.id}
+              className="border p-4 flex justify-between items-center"
+            >
               <div>
                 <h2 className="text-xl font-semibold">{item.name}</h2>
                 <p>{item.price}</p>
@@ -29,5 +31,3 @@ const Cart = () => {
     </section>
   );
 };
-
-export default Cart;
